@@ -53,10 +53,17 @@ dependency_links = []
 if minor_version % 2:
     dependency_links.append('https://trydevpi.tryton.org/')
 
+print("name : ", name)
+print("version : ", version)
+print("Download URL : ", download_url)
+print("Info :", info)
+print("Requires : ", requires)
+print("Dependencies : ", dependency_links)
+print("Test : ", tests_require)
+
 setup(name=name,
     version=version,
     description='Tryton module for proceeding account payments using secured paybox platform',
-    long_description=read('README'),
     author='Tryton',
     author_email='dev@coopengo.com',
     url='http://www.coopengo.com/',
