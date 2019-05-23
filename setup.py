@@ -45,11 +45,13 @@ if minor_version % 2:
 requires = ['python-dateutil', 'python-sql >= 0.7', 'simpleeval']
 for dep in info.get('depends', []):
     if not re.match(r'(ir|res)(\W|$)', dep):
-        requires.append(get_require_version('trytond_%s' % dep))
-requires.append(get_require_version('trytond'))
+        requires.append('trytond_%s' % dep)
+requires.append('trytond')
 
 tests_require = [get_require_version('proteus')]
 dependency_links = []
+dependency_links.append('git+https://github.com/coopengo/account_payment#egg=trytond_account_payment')
+dependency_links.append('git+https://github.com/jcavallo/trytond@test_pip#egg=trytond')
 if minor_version % 2:
     dependency_links.append('https://trydevpi.tryton.org/')
 
